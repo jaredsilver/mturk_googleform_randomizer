@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loading...</title>
+    <script>
+      var workerID = "test";
+
+      var Form = function(id, workerFieldID) {
+        this.id = id;
+        this.workerFieldID = workerFieldID;
+      }
+
+      var forms = [
+        new Form("1FAIpQLSct4Ry99ngyD0rwFeAHYuvVwDSQuMGJXDsG9kaYaLLCN8aQDg", "2028526504"),
+        new Form("1FAIpQLSf26dDHqVh_k7UNWRvX3rpVGeEF4MJlKHuqX1E3k9h8VAPxsQ", "1812193642"),
+        new Form("1FAIpQLSeXPFoj-hKR01W-En4QIVtizjtq1JEz1cPEGfobrwPExynUYA", "209608587")
+      ]
+
+      var selectedForm = forms[Math.floor(Math.random() * forms.length)];
+
+      window.location.href = "https://docs.google.com/forms/d/e/" + selectedForm.id  + "/viewform?entry." + selectedForm.workerFieldID + "=" + workerID;
+    </script>
+  </head>
+  <body>
+    <h1>Loading...</h1>
+  </body>
+</html>
