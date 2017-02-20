@@ -3,7 +3,8 @@
   <head>
     <title>Loading...</title>
     <script>
-      var workerID = "test";
+      // Note that this will break if there is no worker id present. That is by design.
+      var workerId = (new RegExp("[\?&]workerId=([^&#]*)")).exec(window.location.href)[1];
 
       var Form = function(id, workerFieldID) {
         this.id = id;
@@ -18,7 +19,7 @@
 
       var selectedForm = forms[Math.floor(Math.random() * forms.length)];
 
-      window.location.href = "https://docs.google.com/forms/d/e/" + selectedForm.id  + "/viewform?entry." + selectedForm.workerFieldID + "=" + workerID;
+      window.location.href = "https://docs.google.com/forms/d/e/" + selectedForm.id  + "/viewform?entry." + selectedForm.workerFieldID + "=" + workerId;
     </script>
   </head>
   <body>
